@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" 
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.qqh.dao.UserMapper">
+
+    <resultMap id="User" type="com.qqh.model.User">
+    	<result property="id" column="id"/>
+        <result property="user_name" column="user_name"/>
+        <result property="password" column="password"/>
+        <result property="age" column="age"/>
+    </resultMap>
+    
+    
+    <select id="get" resultMap="User">
+        SELECT *
+        <![CDATA[
+            FROM
+                user_t
+            WHERE 
+                id = #{id} 
+        ]]>
+    </select>
+    
+    
+    
+</mapper>
+
